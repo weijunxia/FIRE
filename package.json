@@ -1,0 +1,20 @@
+{
+  "name": "firemern",
+  "version": "1.0.0",
+  "description": "[Live Demo]() | [Trello](https://trello.com/invite/b/WoAfMwPo/71536ca21cb742eadf450bc81c54582e/peronal-finanace-mern) | [Connect on LinkedIn](https://www.linkedin.com/in/w3i/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weijunxia/PersonalFinance.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/weijunxia/PersonalFinance/issues"
+  },
+  "homepage": "https://github.com/weijunxia/PersonalFinance#readme"
+}
