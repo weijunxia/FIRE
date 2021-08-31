@@ -4,7 +4,10 @@
   "description": "[Live Demo]() | [Trello](https://trello.com/invite/b/WoAfMwPo/71536ca21cb742eadf450bc81c54582e/peronal-finanace-mern) | [Connect on LinkedIn](https://www.linkedin.com/in/w3i/)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "build": "cd client && rm -rf build && npm install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -18,10 +21,14 @@
   },
   "homepage": "https://github.com/weijunxia/PersonalFinance#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongoose": "^5.13.8",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "plaid": "^9.1.0",
+    "react-router-dom": "^5.2.1"
   }
 }

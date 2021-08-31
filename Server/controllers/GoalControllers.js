@@ -1,5 +1,5 @@
 const { Goal } = require('../models')
-const { post } = require('../models/Account')
+const { Account } = require('../models/Account')
 
 const getAllGoals = async (req, res) => {
   try {
