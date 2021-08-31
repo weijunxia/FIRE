@@ -3,9 +3,9 @@ const AccountSchema = require('./Account')
 const GoalSchema = require('./Goal')
 
 const Account = mongoose.model('accounts', AccountSchema)
-const Post = mongoose.model('goals', PostSchema)
+const Goal = mongoose.model('goals', GoalSchema)
 
 module.exports = {
   Account,
-  Post
+  Goal
 }
