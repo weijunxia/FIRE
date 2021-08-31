@@ -7,7 +7,7 @@ const dotenv = require('dotenv')
 
 const db = require('./db')
 
-const AppRouter = require('./routes')
+const AppRouter = require('./routes/AppRouter')
 
 const PORT = process.env.PORT || 3001
 

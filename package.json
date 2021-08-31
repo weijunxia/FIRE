@@ -28,7 +28,9 @@
     "express": "^4.17.1",
     "mongoose": "^5.13.8",
     "morgan": "^1.10.0",
-    "plaid": "^9.1.0",
-    "react-router-dom": "^5.2.1"
+    "plaid": "^9.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   }
 }
