@@ -4,7 +4,6 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const logger = require('morgan')
 const dotenv = require('dotenv')
-
 const db = require('./db')
 
 const AppRouter = require('./routes/AppRouter')

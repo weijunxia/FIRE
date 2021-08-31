@@ -1,23 +1,21 @@
-const {Schema} = require('mongoose')
+const { Schema } = require('mongoose')
 
 const GoalSchema = new Schema(
   {
     goalTitle: {
-      type: String,     
-      required: true,
+      type: String,
+      required: true
     },
     goalTotal: {
       type: String,
       required: true
     },
     goalDate: {
-      type: Date,
-      required: true,
-      default: Date.now
+      type: String,
+      required: true
     }
-
   },
-  {timestamps = true}
+  { timestamps: true }
 )
 
 module.exports = GoalSchema

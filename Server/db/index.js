@@ -27,4 +27,4 @@ mongoose
 mongoose.set('debug', true)
 const db = mongoose.connection
 
-module.exporss = db
+module.exports = db
