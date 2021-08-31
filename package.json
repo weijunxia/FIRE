@@ -11,10 +11,15 @@
     "url": "git+https://github.com/weijunxia/PersonalFinance.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Wei Jun Xia",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/weijunxia/PersonalFinance/issues"
   },
-  "homepage": "https://github.com/weijunxia/PersonalFinance#readme"
+  "homepage": "https://github.com/weijunxia/PersonalFinance#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "morgan": "^1.10.0"
+  }
 }
