@@ -2,11 +2,20 @@ const {Schema} = require('mongoose')
 
 const GoalSchema = new Schema(
   {
-    title: {
+    goalTitle: {
       type: String,     
       required: true,
-
+    },
+    goalTotal: {
+      type: String,
+      required: true
+    },
+    goalDate: {
+      type: Date,
+      required: true,
+      default: Date.now
     }
+
   },
   {timestamps = true}
 )
