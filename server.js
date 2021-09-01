@@ -8,9 +8,9 @@ const db = require('./db')
 
 const AppRouter = require('./routes/AppRouter')
 
-const PORT = process.env.PORT || 3001
-
 const app = express()
+
+const PORT = process.env.PORT || 3001
 
 app.use(cors())
 app.use(bodyParser.json())
@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(logger('dev'))
 
 app.use('/api', AppRouter)
+// app.use('/api/plaid', plaid)
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')))

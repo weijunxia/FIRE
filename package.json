@@ -28,7 +28,8 @@
     "express": "^4.17.1",
     "mongoose": "^5.13.8",
     "morgan": "^1.10.0",
-    "plaid": "^9.1.0"
+    "plaid": "^8.2.1",
+    "util": "^0.12.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
