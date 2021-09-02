@@ -9,8 +9,9 @@ import {
 } from 'react-plaid-link'
 import { BASE_URL } from './global'
 // components
-import Test from './components/test'
 import NavBarComp from './components/NavBar/NavBar'
+import Test from './components/test'
+import PlaidLinkComponent from './components/PlaidComponents/PlaidLinkComp'
 // styling
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -53,16 +54,7 @@ function App(props) {
 
       <content>
         <Test />
-        <PlaidLink
-          className="Custom Button"
-          style={{ padding: '20px', fontSize: '16px', cursor: 'pointer' }}
-          token={linkToken}
-          onExit={onExit}
-          onSuccess={onSuccess}
-          onEvent={onEvent}
-        >
-          Connect to your bank account
-        </PlaidLink>
+        <PlaidLinkComponent />
       </content>
     </div>
   )

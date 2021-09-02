@@ -13,7 +13,8 @@ export default function NavBarComp() {
             <Nav className="me-auto">Check</Nav>
             <Nav>
               <Nav.Link href="/transactions">Transactions</Nav.Link>
-              <Nav.Link href="/saving-goal">Saving Goal</Nav.Link>
+              <Nav.Link href="/saving-goal">Saving Goals</Nav.Link>
+              <Nav.Link href="/about-us">About Us</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
