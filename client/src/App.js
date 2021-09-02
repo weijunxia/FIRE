@@ -1,7 +1,6 @@
 import React, { useState, useEffect, Pressable } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import axios from 'axios'
-import Plaid from 'plaid'
 import {
   usePlaidLink,
   PlaidLinkOptions,
@@ -11,9 +10,12 @@ import {
 import { BASE_URL } from './global'
 // components
 import Test from './components/test'
-import NavBar from './components/NavBar/NavBar'
+import NavBarComp from './components/NavBar/NavBar'
 // styling
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+// images
+import logo from './images/fatFIRE.png'
 
 function App(props) {
   const [linkToken, setLinkToken] = useState('')
@@ -45,18 +47,23 @@ function App(props) {
 
   return (
     <div className="App">
-      <header></header>
-      <Test />
-      <PlaidLink
-        className="Custom Button"
-        style={{ padding: '20px', fontSize: '16px', cursor: 'pointer' }}
-        token={linkToken}
-        onExit={onExit}
-        onSuccess={onSuccess}
-        onEvent={onEvent}
-      >
-        Connect to your bank account
-      </PlaidLink>
+      <header>
+        <NavBarComp />
+      </header>
+
+      <content>
+        <Test />
+        <PlaidLink
+          className="Custom Button"
+          style={{ padding: '20px', fontSize: '16px', cursor: 'pointer' }}
+          token={linkToken}
+          onExit={onExit}
+          onSuccess={onSuccess}
+          onEvent={onEvent}
+        >
+          Connect to your bank account
+        </PlaidLink>
+      </content>
     </div>
   )
 }

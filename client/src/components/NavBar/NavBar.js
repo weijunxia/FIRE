@@ -1,38 +1,23 @@
 import React, { useState } from 'react'
-import {
-  Nav,
-  NavbarToggler,
-  NavbarBrand,
-  NavLink,
-  Collapse,
-  NavItem
-} from 'reactstrap'
 import { Link } from 'react-router-dom'
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
 
-export default function NavBar(props) {
-  const [isCollapsed, setCollapse] = useState(false)
-
-  const toggle = () => setCollapse(!isCollapsed)
-
+export default function NavBarComp() {
   return (
     <div>
-      <NavBar color="dark" dark expand="md">
-        <NavbarBrand href="/">fatFIRE</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isCollapsed} navbar>
-          <Nav className="ml-auto" navbar>
-            <NavItem>
-              <NavLink href="/">Home</NavLink>
-            </NavItem>
-
-            <NavItem>
-              <NavLink tag={Link} to="/goals">
-                Goals
-              </NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
-      </NavBar>
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="/">fatFIRE</Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-auto">Check</Nav>
+            <Nav>
+              <Nav.Link href="/transactions">Transactions</Nav.Link>
+              <Nav.Link href="/saving-goal">Saving Goal</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 const { Router } = require('express')
 const plaid = require('plaid')
 const util = require('util')
-require('dotenv').config()
+const dotenv = require('dotenv')
 const AccountController = require('../controllers/AccountController')
 const GoalController = require('../controllers/GoalControllers')
 
@@ -28,8 +28,8 @@ AppRouter.get('/create-link-token', async (req, res) => {
     user: {
       client_user_id: 'unique id'
     },
-    client_name: 'Wei',
-    products: ['auth', 'identity'],
+    client_name: 'fatFIRE',
+    products: ['auth', 'transactions'],
     country_codes: ['US'],
     language: 'en'
   })
