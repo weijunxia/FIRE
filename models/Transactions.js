@@ -1,32 +1,36 @@
 const { Schema } = require('mongoose')
 
-const AccountSchema = new Schema(
+const TransactionSchema = new Schema(
   {
-    accessToken: {
+    account_id: {
       type: String,
       required: true
     },
-    plaidId: {
+    amount: {
       type: String,
       required: true
     },
-    institutionId: {
+    category_id: {
       type: String,
       required: true
     },
-    institutionName: {
+    date: {
       type: String,
       required: true
     },
-    accountName: {
+    merchant_name: {
       type: String,
       required: true
     },
-    accountType: {
+    name: {
       type: String,
       required: true
     },
-    accountSubtype: {
+    pending: {
+      type: Boolean,
+      required: true
+    },
+    transaction_id: {
       type: String,
       required: true
     }
@@ -34,4 +38,4 @@ const AccountSchema = new Schema(
   { timestamps: true }
 )
 
-module.exports = AccountSchema
+module.exports = TransactionSchema

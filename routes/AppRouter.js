@@ -1,9 +1,11 @@
 const { Router } = require('express')
+const { Account, Transactions } = require('../models')
 const plaid = require('plaid')
 const util = require('util')
 const dotenv = require('dotenv')
 const AccountController = require('../controllers/AccountController')
 const GoalController = require('../controllers/GoalControllers')
+const TransactionController = require('../controllers/TransactionController')
 
 AppRouter = Router()
 
@@ -12,7 +14,9 @@ AppRouter.get('/goals', GoalController.getAllGoals)
 AppRouter.post('/goals/:id', GoalController.createNewGoal)
 AppRouter.put('/goals/:id', GoalController.editGoal)
 AppRouter.get('/accounts', AccountController.getAllAccounts)
-AppRouter.post('/accounts/:id', AccountController.addNewAccount)
+AppRouter.post('/accounts', AccountController.addNewAccount)
+AppRouter.get('/transactions', TransactionController.getAllTransactions)
+AppRouter.post('/transactions', TransactionController.addNewTransaction)
 
 const PLAID_CLIENT_ID = process.env.PLAID_CLIENT_ID
 const PLAID_SECRET = process.env.PLAID_SECRET
@@ -34,6 +38,31 @@ AppRouter.get('/create-link-token', async (req, res) => {
     language: 'en'
   })
   res.json({ linkToken })
+})
+// keep perm access token here
+// const accessTokenGlobal = null
+
+AppRouter.get('/transactions/:account_id', async (req, res) => {
+  const account = await Account.findById(req.params.account_id)
+  if (account) {
+    const { access_token } = await plaidClient.exchangePublicToken(
+      account.accessToken
+    )
+    const transactions = await plaidClient.getTransactions(
+      access_token,
+      '2021-01-01',
+      '2021-01-30'
+    )
+    console.log(transactions)
+    return res.status(200).json(transactions)
+  }
+})
+
+AppRouter.post('/transactions/:transaction_id', async (req, res) => {
+  const transaction = await Transactions.findById(req.params.transaction_id)
+  if (transaction) {
+    console.log(res.transaction)
+  }
 })
 
 AppRouter.post('/token-exchange', async (req, res) => {
