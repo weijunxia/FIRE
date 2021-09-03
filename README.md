@@ -2,7 +2,7 @@
 ## Date: August 29, 2021
 ### Made by: Wei Jun Xia
 
-[Live Demo]() | [Trello](https://trello.com/invite/b/WoAfMwPo/71536ca21cb742eadf450bc81c54582e/peronal-finanace-mern) | [Connect on LinkedIn](https://www.linkedin.com/in/w3i/)
+[Live Demo](https://shrouded-basin-08350.herokuapp.com/) | [Trello](https://trello.com/invite/b/WoAfMwPo/71536ca21cb742eadf450bc81c54582e/peronal-finanace-mern) | [Connect on LinkedIn](https://www.linkedin.com/in/w3i/)
 
 ## 📝 About
 FIRE (Financially Independent, Retire Early) is a personal finance app aimed to help users track their finances and retire early. FIRE is built with the MERN stack, using React as our front-end, Node.js and Express as our back-end, and MongoDB as our database. 
