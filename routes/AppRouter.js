@@ -10,11 +10,15 @@ const TransactionController = require('../controllers/TransactionController')
 AppRouter = Router()
 
 AppRouter.get('/', (req, res) => res.send('Success!'))
+
 AppRouter.get('/goals', GoalController.getAllGoals)
-AppRouter.post('/goals/:id', GoalController.createNewGoal)
 AppRouter.put('/goals/:id', GoalController.editGoal)
+AppRouter.post('/goals/:id', GoalController.createNewGoal)
+AppRouter.delete('/goals/:id', GoalController.deleteGoal)
+
 AppRouter.get('/accounts', AccountController.getAllAccounts)
 AppRouter.post('/accounts', AccountController.addNewAccount)
+
 AppRouter.get('/transactions', TransactionController.getAllTransactions)
 AppRouter.post('/transactions', TransactionController.addNewTransaction)
 
@@ -39,8 +43,6 @@ AppRouter.get('/create-link-token', async (req, res) => {
   })
   res.json({ linkToken })
 })
-// keep perm access token here
-// const accessTokenGlobal = null
 
 AppRouter.get('/transactions/:account_id', async (req, res) => {
   const account = await Account.findById(req.params.account_id)

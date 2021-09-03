@@ -6,7 +6,7 @@ import { BASE_URL } from './global'
 import NavBarComp from './components/NavBar/NavBar'
 import PlaidLinkComponent from './components/PlaidComponents/PlaidLinkComp'
 import TransactionsComponent from './components/Transactions/TransactionsComponent'
-import Goals from './components/Goals/Goals'
+import GoalsForm from './components/Goals/GoalsForm'
 // styling
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -37,7 +37,7 @@ function App(props) {
           <TransactionsComponent />
         </Route>
         <Route path="/saving-goal">
-          <Goals />
+          <GoalsForm />
         </Route>
       </Switch>
     </div>
