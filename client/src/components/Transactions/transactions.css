@@ -1,0 +1,25 @@
+div.transactions-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  border: 1px solid black;
+}
+
+td.date,
+td.merchant-name,
+td.category,
+td.description,
+td.amount {
+}
+p.title {
+  font-size: 20px;
+}
+tr,
+td {
+  border: 1px solid black;
+  padding: 5px;
+  margin: 5px;
+}

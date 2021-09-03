@@ -19,37 +19,37 @@ function TransactionsComponent(props) {
   }
 
   return (
-    <div>
+    <div className="transactions-container">
       <table>
         <tr>
-          <td>
-            Date
+          <td className="date">
+            <p className="title">Date</p>
             {allTransactions.map((transaction) => (
               <p>{transaction.date}</p>
             ))}
           </td>
-          <td>
-            Merchant Name
+          <td className="merchant-name">
+            <p className="title">Merchant Name</p>
             {allTransactions.map((transaction) => (
               <p>
                 {transaction.merchant_name ? transaction.merchant_name : 'N/A'}
               </p>
             ))}
           </td>
-          <td>
-            Category
+          <td className="category">
+            <p className="title">Category</p>
             {allTransactions.map((transaction) => (
               <p>{transaction.category[0]}</p>
             ))}
           </td>
-          <td>
-            Description
+          <td className="description">
+            <p className="title">Description</p>
             {allTransactions.map((transaction) => (
               <p>{transaction.name}</p>
             ))}
           </td>
-          <td>
-            Amount
+          <td className="amount">
+            <p className="title">Amount</p>
             {allTransactions.map((transaction) => (
               <p>{transaction.amount}</p>
             ))}
