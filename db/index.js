@@ -1,16 +1,11 @@
 const mongoose = require('mongoose')
 require('dotenv').config()
 
-let MONGODB_URI = ''
-
-if (
+let MONGODB_URI =
   process.env.NODE_ENV === 'production' ||
   process.env.NODE_ENV === 'localserver-productiondb'
-) {
-  MONGODB_URI = process.env.MONGODB_URI
-} else {
-  MONGODB_URI = 'mongodb://127.0.0.1:27017/fireDatabase'
-}
+    ? (MONGODB_URI = process.env.MONGODB_URI)
+    : (MONGODB_URI = 'mongodb://127.0.0.1:27017/fireDatabase')
 
 mongoose
   .connect(MONGODB_URI, {

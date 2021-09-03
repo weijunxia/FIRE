@@ -1,11 +1,11 @@
-div.transactions-container {
+div.transactions-table {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
 table {
-  border: 1px solid black;
 }
 
 td.date,
@@ -15,12 +15,16 @@ td.description,
 td.amount {
 }
 
-p.title {
+p.transaction-header {
   font-size: 20px;
 }
-tr,
+
 td {
-  border: 1px solid black;
   padding: 5px;
   margin: 5px;
+}
+
+tr {
+  border: 0;
+  padding: 0;
 }

@@ -74,14 +74,6 @@ export default function PlaidLinkComponent() {
   const getTransactions = async (accountId) => {
     const res = await axios.get(`${BASE_URL}/transactions/${accountId}`)
     console.log('res is:', res.data.transactions)
-    // const transactions = res.data.map((transaction) => ({
-    //   accountId: transaction.account_id,
-    //   amount: transaction.amount,
-    //   categoryId: transaction.categorgy_id
-    // }))
-    // await setTransactions(transactions)
-    // console.log(transactions)
-    // await insertTransactions(transactions)
   }
 
   return (

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
 import axios from 'axios'
 import { BASE_URL } from '../../global'
-import PlaidLinkComponent from '../PlaidComponents/PlaidLinkComp'
 import './transactions.css'
 
 function TransactionsComponent(props) {
@@ -23,13 +22,13 @@ function TransactionsComponent(props) {
       <table>
         <tr>
           <td className="date">
-            <p className="title">Date</p>
+            <p className="transaction-header">Date</p>
             {allTransactions.map((transaction) => (
-              <p>{transaction.date}</p>
+              <p key={transaction.transaction_id}>{transaction.date}</p>
             ))}
           </td>
           <td className="merchant-name">
-            <p className="title">Merchant Name</p>
+            <p className="transaction-header">Merchant Name</p>
             {allTransactions.map((transaction) => (
               <p>
                 {transaction.merchant_name ? transaction.merchant_name : 'N/A'}
@@ -37,25 +36,45 @@ function TransactionsComponent(props) {
             ))}
           </td>
           <td className="category">
-            <p className="title">Category</p>
+            <p className="transaction-header">Category</p>
             {allTransactions.map((transaction) => (
               <p>{transaction.category[0]}</p>
             ))}
           </td>
           <td className="description">
-            <p className="title">Description</p>
+            <p className="transaction-header">Description</p>
             {allTransactions.map((transaction) => (
               <p>{transaction.name}</p>
             ))}
           </td>
           <td className="amount">
-            <p className="title">Amount</p>
+            <p className="transaction-header">Amount</p>
             {allTransactions.map((transaction) => (
-              <p>{transaction.amount}</p>
+              <p>${transaction.amount}</p>
             ))}
           </td>
         </tr>
       </table>
+      {/* // <div>
+    //   <div className="transaction-table">
+    //     <div className="transaction-row table-header">
+    //       <h2>Date</h2>
+    //       <h2>Merchant Name</h2>
+    //       <h2>Category</h2>
+    //       <h2>Description</h2>
+    //       <h2>Amount</h2>
+    //     </div>
+    //     {allTransactions.map((transaction) => (
+    //       <div key={transaction.transaction_id}>
+    //         <h3>{transaction.date}</h3>
+    //         <h3>{transaction.merchant_name}</h3>
+    //         <h3>{transaction.category}</h3>
+    //         <h3>{transaction.name}</h3>
+    //         <h3>${transaction.amount}</h3>
+    //       </div>
+    //     ))}
+    //   </div>
+    // </div> */}
     </div>
   )
 }
