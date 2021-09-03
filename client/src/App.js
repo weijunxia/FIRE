@@ -4,8 +4,8 @@ import axios from 'axios'
 import { BASE_URL } from './global'
 // components
 import NavBarComp from './components/NavBar/NavBar'
-import Test from './components/test'
 import PlaidLinkComponent from './components/PlaidComponents/PlaidLinkComp'
+import TransactionsComponent from './components/Transactions/TransactionsComponent'
 // styling
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -28,11 +28,14 @@ function App(props) {
       <header>
         <NavBarComp />
       </header>
-
-      <content>
-        <Test />
-        <PlaidLinkComponent />
-      </content>
+      <Switch>
+        <Route exact path="/">
+          <PlaidLinkComponent />
+        </Route>
+        <Route path="/transactions/:account_id">
+          <TransactionsComponent />
+        </Route>
+      </Switch>
     </div>
   )
 }
