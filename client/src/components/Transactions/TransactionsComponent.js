@@ -1,8 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, PureComponent } from 'react'
 import { withRouter } from 'react-router-dom'
 import axios from 'axios'
 import { BASE_URL } from '../../global'
 import './transactions.css'
+import {
+  BarChart,
+  Bar,
+  Cell,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer
+} from 'recharts'
 
 function TransactionsComponent(props) {
   const [allTransactions, setTransactions] = useState([])
@@ -18,39 +29,44 @@ function TransactionsComponent(props) {
   }
 
   return (
-    <div className="transactions-container">
+    <div
+      className="transactions-container"
+      style={{ display: 'flex', flexDirection: 'column' }}
+    >
       <table>
         <tr>
           <td className="date">
-            <p className="transaction-header">Date</p>
+            <td className="transaction-header">Date</td>
             {allTransactions.map((transaction) => (
-              <p key={transaction.transaction_id}>{transaction.date}</p>
+              <td key={transaction.transaction_id}>{transaction.date}</td>
             ))}
           </td>
           <td className="merchant-name">
-            <p className="transaction-header">Merchant Name</p>
+            <td className="transaction-header">Merchant Name</td>
             {allTransactions.map((transaction) => (
-              <p>
-                {transaction.merchant_name ? transaction.merchant_name : 'N/A'}
-              </p>
+              <td>
+                {transaction.merchant_name
+                  ? transaction.merchant_name
+                  : 'Other'}
+              </td>
             ))}
           </td>
           <td className="category">
-            <p className="transaction-header">Category</p>
+            <td className="transaction-header">Category</td>
             {allTransactions.map((transaction) => (
-              <p>{transaction.category[0]}</p>
+              <td>{transaction.category[0]}</td>
             ))}
           </td>
           <td className="description">
-            <p className="transaction-header">Description</p>
+            <td className="transaction-header">Description</td>
             {allTransactions.map((transaction) => (
-              <p>{transaction.name}</p>
+              <td>{transaction.name}</td>
             ))}
           </td>
           <td className="amount">
-            <p className="transaction-header">Amount</p>
+            <td className="transaction-header">Amount</td>
             {allTransactions.map((transaction) => (
-              <p>${transaction.amount}</p>
+              <td>${transaction.amount}</td>
             ))}
           </td>
         </tr>

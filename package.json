@@ -29,6 +29,7 @@
     "mongoose": "^5.13.8",
     "morgan": "^1.10.0",
     "plaid": "^8.2.1",
+    "recharts": "^2.1.2",
     "util": "^0.12.4"
   },
   "devDependencies": {
