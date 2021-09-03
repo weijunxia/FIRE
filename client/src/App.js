@@ -21,6 +21,7 @@ function App(props) {
     e.preventDefault()
     const res = await axios.post(`${BASE_URL}/goals`, formData)
     setGoals(...goals, res.data.results)
+    props.history.push('/saving-goal')
   }
 
   useEffect(() => {
@@ -29,7 +30,7 @@ function App(props) {
       setGoals(res.data.results)
     }
     getGoal()
-  }, [])
+  }, [props.history.location])
 
   return (
     <div className="App">
@@ -43,10 +44,16 @@ function App(props) {
         <Route path="/transactions/:account_id">
           <TransactionsComponent />
         </Route>
-        <Route path="/saving-goal">
-          <GoalsForm handleSubmit={handleSubmit} />
-          {goals.length && <GoalsComponent goals={goals} {...props} />}
-        </Route>
+        <Route
+          exact
+          path="/saving-goal"
+          component={(props) => (
+            <div>
+              <GoalsForm handleSubmit={handleSubmit} {...props} />
+              {goals.length && <GoalsComponent goals={goals} {...props} />}
+            </div>
+          )}
+        />
       </Switch>
     </div>
   )
