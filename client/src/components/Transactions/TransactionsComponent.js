@@ -31,7 +31,9 @@ function TransactionsComponent(props) {
           <td>
             Merchant Name
             {allTransactions.map((transaction) => (
-              <p>{transaction.merchant_name}</p>
+              <p>
+                {transaction.merchant_name ? transaction.merchant_name : 'N/A'}
+              </p>
             ))}
           </td>
           <td>
