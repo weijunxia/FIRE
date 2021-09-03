@@ -13,8 +13,6 @@ export default function GoalsForm(props) {
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value })
   }
-
-  console.log(formData)
   return (
     <div>
       <h1>
@@ -53,6 +51,7 @@ export default function GoalsForm(props) {
             value={formData.goalAllowance}
             onChange={handleChange}
           ></input>
+          <h3>Note: Our Savings Model assumes a 6% YoY growth.</h3>
           <button
             style={{ background: 'darkBlue', color: 'white' }}
             type="submit"

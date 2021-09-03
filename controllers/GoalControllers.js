@@ -36,7 +36,7 @@ const deleteGoal = async (req, res) => {
     const { id } = req.params
     const deleted = await Goal.findByIdAndDelete(id)
     if (deleted) {
-      return res.staus(200).send('Post deleted')
+      return res.status(200).send('Post deleted')
     }
     throw new Error('Post not found')
   } catch (error) {

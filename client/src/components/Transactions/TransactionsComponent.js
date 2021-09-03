@@ -55,26 +55,6 @@ function TransactionsComponent(props) {
           </td>
         </tr>
       </table>
-      {/* // <div>
-    //   <div className="transaction-table">
-    //     <div className="transaction-row table-header">
-    //       <h2>Date</h2>
-    //       <h2>Merchant Name</h2>
-    //       <h2>Category</h2>
-    //       <h2>Description</h2>
-    //       <h2>Amount</h2>
-    //     </div>
-    //     {allTransactions.map((transaction) => (
-    //       <div key={transaction.transaction_id}>
-    //         <h3>{transaction.date}</h3>
-    //         <h3>{transaction.merchant_name}</h3>
-    //         <h3>{transaction.category}</h3>
-    //         <h3>{transaction.name}</h3>
-    //         <h3>${transaction.amount}</h3>
-    //       </div>
-    //     ))}
-    //   </div>
-    // </div> */}
     </div>
   )
 }

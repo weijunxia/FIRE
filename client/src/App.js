@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Pressable } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, withRouter } from 'react-router-dom'
 import axios from 'axios'
 import { BASE_URL } from './global'
 // components
@@ -14,13 +14,13 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // images
 import logo from './images/fatFIRE.png'
 
-function App() {
+function App(props) {
   const [goals, setGoals] = useState([])
 
   const handleSubmit = async (e, formData) => {
     e.preventDefault()
     const res = await axios.post(`${BASE_URL}/goals`, formData)
-    setGoals(res.data.results, ...goals)
+    setGoals(...goals, res.data.results)
   }
 
   useEffect(() => {
@@ -45,11 +45,11 @@ function App() {
         </Route>
         <Route path="/saving-goal">
           <GoalsForm handleSubmit={handleSubmit} />
-          {goals.length && <GoalsComponent goals={goals} />}
+          {goals.length && <GoalsComponent goals={goals} {...props} />}
         </Route>
       </Switch>
     </div>
   )
 }
 
-export default App
+export default withRouter(App)
