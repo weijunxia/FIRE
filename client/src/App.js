@@ -7,21 +7,28 @@ import NavBarComp from './components/NavBar/NavBar'
 import PlaidLinkComponent from './components/PlaidComponents/PlaidLinkComp'
 import TransactionsComponent from './components/Transactions/TransactionsComponent'
 import GoalsForm from './components/Goals/GoalsForm'
+import GoalsComponent from './components/Goals/Goal'
 // styling
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 // images
 import logo from './images/fatFIRE.png'
 
-function App(props) {
+function App() {
   const [goals, setGoals] = useState([])
+
+  const handleSubmit = async (e, formData) => {
+    e.preventDefault()
+    const res = await axios.post(`${BASE_URL}/goals`, formData)
+    setGoals(res.data.results, ...goals)
+  }
 
   useEffect(() => {
     async function getGoal() {
       const res = await axios.get(`${BASE_URL}/goals`)
       setGoals(res.data.results)
     }
-    // getGoal()
+    getGoal()
   }, [])
 
   return (
@@ -37,7 +44,8 @@ function App(props) {
           <TransactionsComponent />
         </Route>
         <Route path="/saving-goal">
-          <GoalsForm />
+          <GoalsForm handleSubmit={handleSubmit} />
+          {goals.length && <GoalsComponent goals={goals} />}
         </Route>
       </Switch>
     </div>

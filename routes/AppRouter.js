@@ -13,7 +13,7 @@ AppRouter.get('/', (req, res) => res.send('Success!'))
 
 AppRouter.get('/goals', GoalController.getAllGoals)
 AppRouter.put('/goals/:id', GoalController.editGoal)
-AppRouter.post('/goals/:id', GoalController.createNewGoal)
+AppRouter.post('/goals', GoalController.createNewGoal)
 AppRouter.delete('/goals/:id', GoalController.deleteGoal)
 
 AppRouter.get('/accounts', AccountController.getAllAccounts)

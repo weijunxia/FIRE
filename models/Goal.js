@@ -10,7 +10,7 @@ const GoalSchema = new Schema(
       type: String,
       required: true
     },
-    goalDate: {
+    goalAllowance: {
       type: String,
       required: true
     }
