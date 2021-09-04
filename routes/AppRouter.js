@@ -1,11 +1,10 @@
 const { Router } = require('express')
 const { Account, Transactions } = require('../models')
-const plaid = require('plaid')
 const util = require('util')
-const dotenv = require('dotenv')
 const AccountController = require('../controllers/AccountController')
 const GoalController = require('../controllers/GoalControllers')
 const TransactionController = require('../controllers/TransactionController')
+const plaidClient = require('../plaid')
 
 AppRouter = Router()
 
@@ -18,19 +17,10 @@ AppRouter.delete('/goals/:id', GoalController.deleteGoal)
 
 AppRouter.get('/accounts', AccountController.getAllAccounts)
 AppRouter.post('/accounts', AccountController.addNewAccount)
-AppRouter.delete('/accounts', AccountController.deleteAccount)
+AppRouter.delete('/accounts/:id', AccountController.deleteAccount)
 
 AppRouter.get('/transactions', TransactionController.getAllTransactions)
 AppRouter.post('/transactions', TransactionController.addNewTransaction)
-
-const PLAID_CLIENT_ID = process.env.PLAID_CLIENT_ID
-const PLAID_SECRET = process.env.PLAID_SECRET
-
-const plaidClient = new plaid.Client({
-  clientID: process.env.PLAID_CLIENT_ID,
-  secret: process.env.PLAID_SECRET,
-  env: plaid.environments.sandbox
-})
 
 AppRouter.get('/create-link-token', async (req, res) => {
   const { link_token: linkToken } = await plaidClient.createLinkToken({
@@ -48,11 +38,8 @@ AppRouter.get('/create-link-token', async (req, res) => {
 AppRouter.get('/transactions/:account_id', async (req, res) => {
   const account = await Account.findById(req.params.account_id)
   if (account) {
-    const { access_token } = await plaidClient.exchangePublicToken(
-      account.accessToken
-    )
     const transactions = await plaidClient.getTransactions(
-      access_token,
+      account.accessToken,
       '2021-01-01',
       '2021-01-30'
     )

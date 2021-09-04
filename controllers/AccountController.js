@@ -1,5 +1,5 @@
 const { Account } = require('../models')
-
+const plaidClient = require('../plaid')
 const getAllAccounts = async (req, res) => {
   try {
     const results = await Account.find()
@@ -11,13 +11,18 @@ const getAllAccounts = async (req, res) => {
 
 const addNewAccount = async (req, res) => {
   try {
-    if (req.body.length) {
-      const accounts = await Account.insertMany(req.body)
-      return res.send(accounts)
+    const data = req.body
+    const preparedAccounts = []
+    for (let account of data) {
+      const { access_token } = await plaidClient.exchangePublicToken(
+        account.accessToken
+      )
+      let newAccount = { ...account, accessToken: access_token }
+
+      preparedAccounts.push(newAccount)
     }
-    const account = new Account(req.body)
-    await results.save()
-    return res.status(201).json(account)
+    const accounts = await Account.insertMany(preparedAccounts)
+    return res.send(accounts)
   } catch (error) {
     return res.status(500).send(error.message)
   }

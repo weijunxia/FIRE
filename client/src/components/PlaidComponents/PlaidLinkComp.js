@@ -32,9 +32,10 @@ export default function PlaidLinkComponent() {
     console.log(res)
   }
 
-  const insertTransactions = async (transactions) => {
-    const res = await axios.post(`${BASE_URL}/transactions`)
-    setTransactions([...transactions, res.transactions])
+  const handleDelete = async (id) => {
+    await axios.delete(`${BASE_URL}/accounts/${id}`)
+    let filtered = accounts.filter((account) => account._id !== id)
+    setAccounts(filtered)
   }
 
   const getAllTransactions = async () => {
@@ -71,11 +72,6 @@ export default function PlaidLinkComponent() {
     await insertAccounts(accounts)
   }
 
-  const getTransactions = async (accountId) => {
-    const res = await axios.get(`${BASE_URL}/transactions/${accountId}`)
-    console.log('res is:', res.data.transactions)
-  }
-
   return (
     <div>
       <PlaidLink
@@ -90,13 +86,16 @@ export default function PlaidLinkComponent() {
       </PlaidLink>
       {accounts.map((account) => (
         <div key={account._id}>
-          <h1>
+          <button onClick={() => handleDelete(account._id)}>
+            Delete {account.accountName} Account
+          </button>
+          <h1 style={{ margin: '10px' }}>
             {account.accountName}
             <br></br>
             {account.institutionName}
           </h1>
           <Link to={`/transactions/${account._id}`}>
-            <button>Check Transactions</button>
+            <button style={{ margin: '10px' }}>Check Transactions</button>
           </Link>
         </div>
       ))}
