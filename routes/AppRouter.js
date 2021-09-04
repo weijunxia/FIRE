@@ -18,6 +18,7 @@ AppRouter.delete('/goals/:id', GoalController.deleteGoal)
 
 AppRouter.get('/accounts', AccountController.getAllAccounts)
 AppRouter.post('/accounts', AccountController.addNewAccount)
+AppRouter.delete('/accounts', AccountController.deleteAccount)
 
 AppRouter.get('/transactions', TransactionController.getAllTransactions)
 AppRouter.post('/transactions', TransactionController.addNewTransaction)

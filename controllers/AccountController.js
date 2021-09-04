@@ -23,7 +23,21 @@ const addNewAccount = async (req, res) => {
   }
 }
 
+const deleteAccount = async (req, res) => {
+  try {
+    const { id } = req.params
+    const deleted = await Account.findByIdAndDelete(id)
+    if (deleted) {
+      return res.status(200).send('Account Deleted')
+    }
+    throw new Error('Post not found')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
   getAllAccounts,
-  addNewAccount
+  addNewAccount,
+  deleteAccount
 }
