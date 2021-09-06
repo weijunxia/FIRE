@@ -13,14 +13,12 @@ function GoalsComponent(props) {
   return (
     <div>
       {props.goals.map((goal) => (
-        <div>
-          <table>
-            <th>{goal.goalTitle}</th>
-            <td>Goal Total: {goal.goalTotal}</td>
-            <td>Monthly saving goal: {goal.goalAllowance}</td>
-            <button onClick={(e) => handleSubmit(e, goal._id)}>delete</button>
-          </table>
-        </div>
+        <table className="goal-list">
+          <th>{goal.goalTitle}</th>
+          <td>Goal Total: {goal.goalTotal}</td>
+          <td>Monthly saving goal: {goal.goalAllowance}</td>
+          <button onClick={(e) => handleSubmit(e, goal._id)}>delete</button>
+        </table>
       ))}
     </div>
   )

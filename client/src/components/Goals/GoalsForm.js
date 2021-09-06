@@ -36,6 +36,7 @@ export default function GoalsForm(props) {
             name="goalTitle"
             value={formData.goalTitle}
             onChange={handleChange}
+            defaultValue="e.g. retirement, mortgage etc"
           ></input>
           <h3>Enter target:</h3>
           <input
