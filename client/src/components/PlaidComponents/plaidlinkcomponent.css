@@ -1,4 +1,12 @@
 .CustomButton {
   color: black;
-  background-color: black;
+}
+div.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+button.delete-account {
+  background-color: white;
 }

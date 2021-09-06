@@ -75,7 +75,11 @@ export default function PlaidLinkComponent() {
   }
 
   return (
-    <div>
+    <div className="home-page">
+      <h1>
+        Connect your bank to start your journey to financial freedom and early
+        retirement
+      </h1>
       <PlaidLink
         className="CustomButton"
         style={{ padding: '20px', fontSize: '16px', curor: 'pointer' }}
@@ -88,7 +92,10 @@ export default function PlaidLinkComponent() {
       </PlaidLink>
       {accounts.map((account) => (
         <div key={account._id}>
-          <button onClick={() => handleDelete(account._id)}>
+          <button
+            onClick={() => handleDelete(account._id)}
+            className="delete-account"
+          >
             Delete {account.accountName} Account
           </button>
           <h1 style={{ margin: '10px' }}>
