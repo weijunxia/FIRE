@@ -19,7 +19,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(logger('dev'))
 
 app.use('/api', AppRouter)
-// app.use('/api/plaid', plaid)
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')))

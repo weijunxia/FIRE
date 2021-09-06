@@ -55,28 +55,4 @@ AppRouter.post('/transactions/:transaction_id', async (req, res) => {
   }
 })
 
-AppRouter.post('/token-exchange', async (req, res) => {
-  const { publicToken } = req.body
-  const { access_token: accessToken } = await plaidClient.exchangePublicToken(
-    publicToken
-  )
-
-  const authResponse = await plaidClient.getAuth(accessToken)
-  console.log('----------------')
-  console.log('Auth response: ')
-  console.log(util.inspect(authResponse, false, null, true))
-
-  const identityResponse = await plaidClient.getIdentity(accessToken)
-  console.log('----------------')
-  console.log('Identity Response')
-  console.log(util.inspect(identityResponse, false, null, true))
-
-  const balanceResponse = await plaidClient.getBalance(accessToken)
-  console.log('----------------')
-  console.log('Balance Response')
-  console.log(util.inspect(balanceResponse, false, null, true))
-
-  res.sendStatus(200)
-})
-
 module.exports = AppRouter

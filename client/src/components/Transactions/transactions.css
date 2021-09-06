@@ -1,4 +1,4 @@
-div.transactions-table {
+div.transaction-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -6,6 +6,9 @@ div.transactions-table {
 }
 
 table {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 td.date,
@@ -15,7 +18,7 @@ td.description,
 td.amount {
 }
 
-p.transaction-header {
+td.transaction-header {
   font-size: 20px;
 }
 

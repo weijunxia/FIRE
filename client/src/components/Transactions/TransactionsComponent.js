@@ -29,20 +29,15 @@ function TransactionsComponent(props) {
   }
 
   return (
-    <div
-      className="transactions-container"
-      style={{ display: 'flex', flexDirection: 'column' }}
-    >
+    <div className="transactions-container">
       <table>
         <tr>
-          <td className="date">
-            <td className="transaction-header">Date</td>
+
+            <th className="transaction-header date">Date</th>
             {allTransactions.map((transaction) => (
               <td key={transaction.transaction_id}>{transaction.date}</td>
             ))}
-          </td>
-          <td className="merchant-name">
-            <td className="transaction-header">Merchant Name</td>
+            <th className="transaction-header merchant">Merchant Name</th>
             {allTransactions.map((transaction) => (
               <td>
                 {transaction.merchant_name
@@ -50,25 +45,20 @@ function TransactionsComponent(props) {
                   : 'Other'}
               </td>
             ))}
-          </td>
-          <td className="category">
-            <td className="transaction-header">Category</td>
+            <th className="transaction-header category">Category</th>
             {allTransactions.map((transaction) => (
               <td>{transaction.category[0]}</td>
             ))}
-          </td>
           <td className="description">
-            <td className="transaction-header">Description</td>
+            <th className="transaction-header">Description</th>
             {allTransactions.map((transaction) => (
               <td>{transaction.name}</td>
             ))}
-          </td>
           <td className="amount">
-            <td className="transaction-header">Amount</td>
+            <th className="transaction-header amount">Amount</th>
             {allTransactions.map((transaction) => (
               <td>${transaction.amount}</td>
             ))}
-          </td>
         </tr>
       </table>
     </div>

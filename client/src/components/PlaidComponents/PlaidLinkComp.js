@@ -23,7 +23,9 @@ export default function PlaidLinkComponent() {
 
   const insertAccounts = async (accounts) => {
     const res = await axios.post(`${BASE_URL}/accounts`, accounts)
-    setAccounts([...accounts, ...res.data])
+    let filteredAccounts = accounts.filter((account) => !account._id)
+    setAccounts([...filteredAccounts])
+    // setAccounts([...accounts, ...res.data])
   }
 
   const getAccounts = async () => {
