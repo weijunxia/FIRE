@@ -1,24 +1,29 @@
-div.transaction-container {
-  /* display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center; */
-}
-
 table {
-  /* display: flex;
-  flex-wrap: wrap; */
+  display: flex;
+  flex-wrap: wrap;
   border-collapse: collapse;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3%;
   width: 100%;
 }
 
-/* td.date,
+div.transaction-container {
+  display: flex;
+}
+
+th.transaction-header {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+td.date,
 td.merchant-name,
 td.category,
 td.description,
 td.amount {
-} */
+  display: flex;
+}
 
 td.transaction-header {
   font-size: 20px;
@@ -26,7 +31,6 @@ td.transaction-header {
 
 td {
   padding: 5px;
-  margin: 5px;
 }
 
 tr {
