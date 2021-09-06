@@ -1,22 +1,24 @@
 div.transaction-container {
-  display: flex;
+  /* display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 table {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
+  border-collapse: collapse;
+  width: 100%;
 }
 
-td.date,
+/* td.date,
 td.merchant-name,
 td.category,
 td.description,
 td.amount {
-}
+} */
 
 td.transaction-header {
   font-size: 20px;

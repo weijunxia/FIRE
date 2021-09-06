@@ -31,34 +31,73 @@ function TransactionsComponent(props) {
   return (
     <div className="transactions-container">
       <table>
+        <tr className="date">
+          <th className="transaction-header">Date</th>
+          {allTransactions.map((transaction) => (
+            <td key={transaction.transaction_id}>{transaction.date}</td>
+          ))}
+        </tr>
+        <tr className="merchant-name">
+          <th className="transaction-header">Merchant Name</th>
+          {allTransactions.map((transaction) => (
+            <td>
+              {transaction.merchant_name ? transaction.merchant_name : 'N/A'}
+            </td>
+          ))}
+        </tr>
+        <tr className="category">
+          <th className="transaction-header">Category</th>
+          {allTransactions.map((transaction) => (
+            <td>{transaction.category[0]}</td>
+          ))}
+        </tr>
+        <tr className="description">
+          <th className="transaction-header">Description</th>
+          {allTransactions.map((transaction) => (
+            <td>{transaction.name}</td>
+          ))}
+        </tr>
+        <tr className="amount">
+          <th className="transaction-header">Amount</th>
+          {allTransactions.map((transaction) => (
+            <td>${transaction.amount}</td>
+          ))}
+        </tr>
+      </table>
+      <table style={{ width: '100%' }}>
         <tr>
-
-            <th className="transaction-header date">Date</th>
-            {allTransactions.map((transaction) => (
-              <td key={transaction.transaction_id}>{transaction.date}</td>
-            ))}
-            <th className="transaction-header merchant">Merchant Name</th>
-            {allTransactions.map((transaction) => (
-              <td>
-                {transaction.merchant_name
-                  ? transaction.merchant_name
-                  : 'Other'}
-              </td>
-            ))}
-            <th className="transaction-header category">Category</th>
-            {allTransactions.map((transaction) => (
-              <td>{transaction.category[0]}</td>
-            ))}
-          <td className="description">
-            <th className="transaction-header">Description</th>
-            {allTransactions.map((transaction) => (
-              <td>{transaction.name}</td>
-            ))}
-          <td className="amount">
-            <th className="transaction-header amount">Amount</th>
-            {allTransactions.map((transaction) => (
-              <td>${transaction.amount}</td>
-            ))}
+          <th>Date</th>
+          <th>Merchant Name</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Amount</th>
+        </tr>
+        <tr>
+          {allTransactions.map((transaction) => (
+            <td key={transaction.transaction_id}>{transaction.date}</td>
+          ))}
+        </tr>
+        <tr>
+          {allTransactions.map((transaction) => (
+            <td>
+              {transaction.merchant_name ? transaction.merchant_name : 'N/A'}
+            </td>
+          ))}
+        </tr>
+        <tr>
+          {allTransactions.map((transaction) => (
+            <td>{transaction.category[0]}</td>
+          ))}
+        </tr>
+        <tr>
+          {allTransactions.map((transaction) => (
+            <td>{transaction.name}</td>
+          ))}
+        </tr>
+        <tr>
+          {allTransactions.map((transaction) => (
+            <td>${transaction.amount}</td>
+          ))}
         </tr>
       </table>
     </div>
