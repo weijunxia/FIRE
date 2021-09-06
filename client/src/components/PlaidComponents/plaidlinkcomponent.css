@@ -2,6 +2,8 @@
   color: black;
 }
 div.home-page {
+  background-color: bisque;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
