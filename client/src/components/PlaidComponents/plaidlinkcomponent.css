@@ -10,7 +10,9 @@ div.home-page {
 
 button.delete-account {
   background-color: white;
+  margin-top: 10px;
 }
 button.check-transactions {
   background-color: white;
+  margin-top: 10px;
 }

@@ -82,7 +82,6 @@ export default function PlaidLinkComponent() {
       </h1>
       <PlaidLink
         className="CustomButton"
-        style={{ padding: '20px', fontSize: '16px', curor: 'pointer' }}
         token={linkToken}
         onExit={onExit}
         onSuccess={onSuccess}
@@ -98,7 +97,7 @@ export default function PlaidLinkComponent() {
           >
             Delete {account.accountName} Account
           </button>
-          <h1 style={{ margin: '10px' }}>
+          <h1>
             {account.accountName}
             <br></br>
             {account.institutionName}
