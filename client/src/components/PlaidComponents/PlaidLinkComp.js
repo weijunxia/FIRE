@@ -104,7 +104,7 @@ export default function PlaidLinkComponent() {
             {account.institutionName}
           </h1>
           <Link to={`/transactions/${account._id}`}>
-            <button style={{ margin: '10px' }}>Check Transactions</button>
+            <button className="check-transactions">Check Transactions</button>
           </Link>
         </div>
       ))}

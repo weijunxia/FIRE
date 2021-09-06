@@ -7,6 +7,10 @@ div.home-page {
   justify-content: center;
   align-items: center;
 }
+
 button.delete-account {
+  background-color: white;
+}
+button.check-transactions {
   background-color: white;
 }
