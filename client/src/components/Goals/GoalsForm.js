@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { BASE_URL } from '../../global'
-import './goals.css'
+import './goalsForm.css'
 
 export default function GoalsForm(props) {
   const [formData, setFormData] = useState({
@@ -14,7 +14,7 @@ export default function GoalsForm(props) {
     setFormData({ ...formData, [event.target.name]: event.target.value })
   }
   return (
-    <div>
+    <div className="body">
       <h1>
         Welcome to fatFIRE (Financially Independent and Retire Early) with a fat
         stash. Enter the criteria below to plan for your future.

@@ -12,6 +12,10 @@ div.transaction-container {
   display: flex;
 }
 
+td:nth-child(even) {
+  background-color: #dddddd;
+}
+
 th.transaction-header {
   display: flex;
   flex-wrap: wrap;

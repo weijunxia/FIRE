@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { BASE_URL } from '../../global'
 import { withRouter } from 'react-router-dom'
+import './goal.css'
 
 function GoalsComponent(props) {
   const handleSubmit = async (e, id) => {
@@ -12,17 +13,11 @@ function GoalsComponent(props) {
   return (
     <div>
       {props.goals.map((goal) => (
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            margin: '10px'
-          }}
-        >
+        <div>
           <table>
-            <p>{goal.goalTitle}</p>
-            <p>Goal Total: {goal.goalTotal}</p>
-            <p>Monthly saving goal: {goal.goalAllowance}</p>
+            <th>{goal.goalTitle}</th>
+            <td>Goal Total: {goal.goalTotal}</td>
+            <td>Monthly saving goal: {goal.goalAllowance}</td>
             <button onClick={(e) => handleSubmit(e, goal._id)}>delete</button>
           </table>
         </div>

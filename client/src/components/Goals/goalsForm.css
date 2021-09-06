@@ -1,0 +1,13 @@
+Button.submitButton {
+  margin-top: 10px;
+}
+div.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  width: 70%;
+  text-align: center;
+}
