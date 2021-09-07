@@ -29,7 +29,9 @@
     "mongoose": "^5.13.8",
     "morgan": "^1.10.0",
     "plaid": "^8.2.1",
+    "react-redux": "^7.2.5",
     "recharts": "^2.1.2",
+    "redux": "^4.1.1",
     "util": "^0.12.4"
   },
   "devDependencies": {
