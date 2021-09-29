@@ -21,3 +21,5 @@ FIRE (Financially Independent, Retire Early) is a personal finance app aimed to 
 ## 🛠 App Functionality
 Users will be able to track all of their expenses, income, and investments through the Plaid API as well as be provided visualization tools and goal setting tools to help them plan for their future. 
 
+## Future Updates
+~[] Added Authentication
