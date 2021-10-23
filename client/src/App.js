@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Pressable } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import axios from 'axios'
 import { BASE_URL } from './global'
@@ -13,6 +13,7 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 // images
 import logo from './images/fatFIRE.png'
+import BannerComp from './components/Banner/Banner'
 
 function App(props) {
   const [goals, setGoals] = useState([])
@@ -39,6 +40,7 @@ function App(props) {
       </header>
       <Switch>
         <Route exact path="/">
+          <BannerComp />
           <PlaidLinkComponent />
         </Route>
         <Route path="/transactions/:account_id">

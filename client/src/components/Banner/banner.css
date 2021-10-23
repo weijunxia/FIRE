@@ -1,0 +1,45 @@
+.home_page_banner {
+  background: url('../../images/banner.png');
+  height: 70vh;
+  background-size: cover;
+  background-position: 0% 20%;
+}
+
+.home_page_banner_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  width: 40vw;
+  height: 50vh;
+  margin-left: 5vw;
+  margin-top: 10vh;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-radius: 5px;
+}
+
+.home_page_banner_info > h1 {
+  font-weight: 900;
+  width: fit-content;
+}
+
+.home_page_banner_info > h3 {
+  text-align: center;
+  font-size: 23px;
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+.home_page_banner_info > button {
+  border: none;
+  margin-top: 1vh;
+  width: 120px;
+  height: 40px;
+  border-radius: 5px;
+}

@@ -24,7 +24,6 @@ function TransactionsComponent(props) {
 
   const getTransactions = async (accountId) => {
     const res = await axios.get(`${BASE_URL}/transactions/${accountId}`)
-    console.log('res is:', res.data.transactions)
     setTransactions(res.data.transactions)
   }
 

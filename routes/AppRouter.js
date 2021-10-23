@@ -50,9 +50,6 @@ AppRouter.get('/transactions/:account_id', async (req, res) => {
 
 AppRouter.post('/transactions/:transaction_id', async (req, res) => {
   const transaction = await Transactions.findById(req.params.transaction_id)
-  if (transaction) {
-    console.log(res.transaction)
-  }
 })
 
 module.exports = AppRouter
